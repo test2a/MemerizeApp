@@ -30,6 +30,15 @@ jobs:
           cache: "gradle"
       - name: Build APK
         run: bash ./gradlew assembleReleaseGithub --stacktrace
+      - name: List APK outputs
+        run: ls -R app/build/outputs/apk || true
+
+      - name: Create GitHub Release and upload APK
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ github.run_number }}
+          name: Release ${{ github.run_number }}
+          files: app/build/outputs/apk/**/*.apk
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
