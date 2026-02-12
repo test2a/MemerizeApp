@@ -1,4 +1,4 @@
-package app.test2a.memerize.utils
+package app.suhasdissa.memerize.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,7 +10,7 @@ import android.os.Build
 import android.os.Environment
 import android.os.ParcelFileDescriptor
 import android.util.Log
-import app.test2a.memerize.utils.InAppLogger
+import app.suhasdissa.memerize.utils.InAppLogger
 import androidx.annotation.RequiresApi
 import androidx.documentfile.provider.DocumentFile
 import app.test2a.memerize.backend.apis.FileDownloadApi
