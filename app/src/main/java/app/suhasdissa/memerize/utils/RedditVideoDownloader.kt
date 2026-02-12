@@ -10,6 +10,7 @@ import android.os.Build
 import android.os.Environment
 import android.os.ParcelFileDescriptor
 import android.util.Log
+import app.suhasdissa.memerize.utils.InAppLogger
 import androidx.annotation.RequiresApi
 import androidx.documentfile.provider.DocumentFile
 import app.suhasdissa.memerize.backend.apis.FileDownloadApi
@@ -152,6 +153,7 @@ class RedditVideoDownloader {
             muxer.release()
         } catch (e: Exception) {
             Log.e("Video Muxer", e.message, e)
+            InAppLogger.log("Video Muxer: ${e.message}\n${e.stackTraceToString()}")
             return false
         }
         return true
@@ -184,6 +186,7 @@ class RedditVideoDownloader {
                 }
             } catch (e: Exception) {
                 Log.e("File Download", e.message, e)
+                InAppLogger.log("File Download: ${e.message}\n${e.stackTraceToString()}")
                 null
             }
         }
@@ -195,6 +198,7 @@ class RedditVideoDownloader {
             return matchRedditUrls(text)
         } catch (e: Exception) {
             Log.e("Reddit Urls", e.message, e)
+            InAppLogger.log("Reddit Urls: ${e.message}\n${e.stackTraceToString()}")
             null
         }
     }
