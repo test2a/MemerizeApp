@@ -51,7 +51,7 @@ class RedditVideoDownloader {
         outputFileName: String
     ): Boolean {
         val urlS = getRedditUrls(url) ?: return false
-        val redditUrl = Regex("https?://v\\.redd\.it/\\S+/\").find(url)?.value ?: return false
+            val redditUrl = Regex("https?://v\\.redd\\.it/\\S+/").find(url)?.value ?: return false
 
         return withContext(Dispatchers.IO) {
             val files = listOfNotNull(
@@ -132,7 +132,7 @@ class RedditVideoDownloader {
                     videoExtractor.advance()
                 }
             }
-            if (audioFilePath != null) {
+            if (audioPfd != null) {
                 var sawEOS2 = false
                 while (!sawEOS2) {
                     audioBufferInfo.offset = offset
