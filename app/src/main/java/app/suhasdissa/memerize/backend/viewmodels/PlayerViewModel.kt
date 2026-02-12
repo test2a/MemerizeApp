@@ -12,6 +12,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.media3.common.Player
 import app.test2a.memerize.backend.database.entity.Meme
 import app.test2a.memerize.utils.RedditVideoDownloader
+import app.suhasdissa.memerize.utils.RedditVideoDownloader
 import java.util.UUID
 import kotlinx.coroutines.launch
 

@@ -6,6 +6,7 @@ All Rights Reserved
  ******************************************************************************/
 
 package app.test2a.memerize.utils
+package app.suhasdissa.memerize.utils
 
 import android.content.Context
 import android.content.SharedPreferences
