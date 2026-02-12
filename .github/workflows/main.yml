@@ -1,4 +1,7 @@
+
 name: Create Apk
+permissions:
+  contents: write
 
 on:
   workflow_dispatch:
@@ -38,7 +41,7 @@ jobs:
         with:
           tag: release-${{ github.run_id }}-${{ github.run_attempt }}
           name: Release ${{ github.run_id }}.${{ github.run_attempt }}
-          files: app/build/outputs/apk/**/*.apk
+          artifact: app/build/outputs/apk/**/*.apk
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
