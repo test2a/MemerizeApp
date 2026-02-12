@@ -10,6 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ClipboardManager
@@ -42,7 +43,6 @@ fun InAppLogOverlay() {
             .clickable { expanded = !expanded }
             .padding(4.dp)
             .then(if (expanded) Modifier.fillMaxHeight(0.5f) else Modifier)
-            .align(Alignment.BottomCenter)
     ) {
         Column(Modifier.fillMaxWidth()) {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {

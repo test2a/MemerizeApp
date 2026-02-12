@@ -9,6 +9,7 @@ package app.suhasdissa.memerize.ui
 
 import android.view.SoundEffectConstants
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalNavigationDrawer
