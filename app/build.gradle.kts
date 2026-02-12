@@ -6,15 +6,15 @@ plugins {
 }
 
 android {
-    namespace = "app.suhasdissa.memerize"
+    namespace = "app.test2a.memerize"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "app.suhasdissa.memerize"
+        applicationId = "app.test2a.memerize"
         minSdk = 24
         targetSdk = 34
-        versionCode = 24
-        versionName = "2.4"
+        versionCode = 10
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

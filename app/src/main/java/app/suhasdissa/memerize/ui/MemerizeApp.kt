@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 11/25/22, 6:10 PM
 Copyright (c) 2022
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui
+package app.test2a.memerize.ui
 
 import android.view.SoundEffectConstants
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,7 +14,7 @@ import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Surface
-import app.suhasdissa.memerize.ui.components.InAppLogOverlay
+import app.test2a.memerize.ui.components.InAppLogOverlay
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -25,10 +25,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalView
 import androidx.navigation.compose.rememberNavController
-import app.suhasdissa.memerize.AppNavHost
-import app.suhasdissa.memerize.Destination
-import app.suhasdissa.memerize.navigateTo
-import app.suhasdissa.memerize.ui.components.NavDrawerContent
+import app.test2a.memerize.AppNavHost
+import app.test2a.memerize.Destination
+import app.test2a.memerize.navigateTo
+import app.test2a.memerize.ui.components.NavDrawerContent
 import kotlinx.coroutines.launch
 
 @Composable

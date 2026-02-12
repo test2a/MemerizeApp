@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 11/23/22, 4:16 PM
 Copyright (c) 2022
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.components
+package app.test2a.memerize.ui.components
 
 import android.view.SoundEffectConstants
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -35,7 +35,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import app.suhasdissa.memerize.R
+import app.test2a.memerize.R
 import coil.compose.AsyncImage
 
 @OptIn(ExperimentalFoundationApi::class)

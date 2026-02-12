@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.backend.model
+package app.test2a.memerize.backend.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

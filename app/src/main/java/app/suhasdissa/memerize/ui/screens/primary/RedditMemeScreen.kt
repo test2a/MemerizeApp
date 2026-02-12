@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 11/23/22, 4:16 PM
 Copyright (c) 2022
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.screens.primary
+package app.test2a.memerize.ui.screens.primary
 
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Column
@@ -39,13 +39,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import app.suhasdissa.memerize.R
-import app.suhasdissa.memerize.backend.viewmodels.RedditViewModel
-import app.suhasdissa.memerize.backend.viewmodels.state.MemeUiState
-import app.suhasdissa.memerize.ui.components.LoadingScreen
-import app.suhasdissa.memerize.ui.components.MemeGrid
-import app.suhasdissa.memerize.ui.components.RetryScreen
-import app.suhasdissa.memerize.ui.components.SortBottomSheet
+import app.test2a.memerize.R
+import app.test2a.memerize.backend.viewmodels.RedditViewModel
+import app.test2a.memerize.backend.viewmodels.state.MemeUiState
+import app.test2a.memerize.ui.components.LoadingScreen
+import app.test2a.memerize.ui.components.MemeGrid
+import app.test2a.memerize.ui.components.RetryScreen
+import app.test2a.memerize.ui.components.SortBottomSheet
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 

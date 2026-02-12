@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 5/10/23, 8:57 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.components
+package app.test2a.memerize.ui.components
 
 import android.view.SoundEffectConstants
 import androidx.compose.foundation.layout.Box

@@ -1,12 +1,12 @@
-package app.suhasdissa.memerize.backend.repositories
+package app.test2a.memerize.backend.repositories
 
 import android.util.Log
 import androidx.annotation.WorkerThread
-import app.suhasdissa.memerize.backend.apis.RedditApi
-import app.suhasdissa.memerize.backend.database.dao.RedditMemeDao
-import app.suhasdissa.memerize.backend.database.entity.RedditCommunity
-import app.suhasdissa.memerize.backend.database.entity.RedditMeme
-import app.suhasdissa.memerize.backend.model.Sort
+import app.test2a.memerize.backend.apis.RedditApi
+import app.test2a.memerize.backend.database.dao.RedditMemeDao
+import app.test2a.memerize.backend.database.entity.RedditCommunity
+import app.test2a.memerize.backend.database.entity.RedditMeme
+import app.test2a.memerize.backend.model.Sort
 
 interface RedditMemeRepository : MemeRepository<RedditMeme, RedditCommunity>
 

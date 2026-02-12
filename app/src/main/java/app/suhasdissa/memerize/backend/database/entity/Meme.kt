@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.backend.database.entity
+package app.test2a.memerize.backend.database.entity
 
 interface Meme {
     val id: String

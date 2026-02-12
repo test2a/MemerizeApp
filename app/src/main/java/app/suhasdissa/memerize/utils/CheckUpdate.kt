@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 11/23/22, 4:16 PM
 Copyright (c) 2022
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.utils
+package app.test2a.memerize.utils
 
 import android.content.Context
 import android.content.pm.PackageManager
@@ -79,7 +79,7 @@ interface UpdateApiService {
     @Headers(
         "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
     )
-    @GET("repos/SuhasDissa/MemerizeApp/releases/latest")
+    @GET("repos/test2a/MemerizeApp/releases/latest")
     suspend fun getLatestRelease(): LatestRelease
 }
 

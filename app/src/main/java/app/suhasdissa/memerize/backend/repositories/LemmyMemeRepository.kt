@@ -1,12 +1,12 @@
-package app.suhasdissa.memerize.backend.repositories
+package app.test2a.memerize.backend.repositories
 
 import android.util.Log
 import androidx.annotation.WorkerThread
-import app.suhasdissa.memerize.backend.apis.LemmyApi
-import app.suhasdissa.memerize.backend.database.dao.LemmyMemeDAO
-import app.suhasdissa.memerize.backend.database.entity.LemmyCommunity
-import app.suhasdissa.memerize.backend.database.entity.LemmyMeme
-import app.suhasdissa.memerize.backend.model.Sort
+import app.test2a.memerize.backend.apis.LemmyApi
+import app.test2a.memerize.backend.database.dao.LemmyMemeDAO
+import app.test2a.memerize.backend.database.entity.LemmyCommunity
+import app.test2a.memerize.backend.database.entity.LemmyMeme
+import app.test2a.memerize.backend.model.Sort
 
 interface LemmyMemeRepository : MemeRepository<LemmyMeme, LemmyCommunity>
 class LemmyMemeRepositoryImpl(

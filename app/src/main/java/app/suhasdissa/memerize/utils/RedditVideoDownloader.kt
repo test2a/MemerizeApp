@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.utils
+package app.test2a.memerize.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,11 +10,11 @@ import android.os.Build
 import android.os.Environment
 import android.os.ParcelFileDescriptor
 import android.util.Log
-import app.suhasdissa.memerize.utils.InAppLogger
+import app.test2a.memerize.utils.InAppLogger
 import androidx.annotation.RequiresApi
 import androidx.documentfile.provider.DocumentFile
-import app.suhasdissa.memerize.backend.apis.FileDownloadApi
-import app.suhasdissa.memerize.backend.apis.RedditVideoApi
+import app.test2a.memerize.backend.apis.FileDownloadApi
+import app.test2a.memerize.backend.apis.RedditVideoApi
 import java.nio.ByteBuffer
 import java.util.UUID
 import java.io.File

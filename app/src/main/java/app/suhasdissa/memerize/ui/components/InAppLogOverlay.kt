@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.ui.components
+package app.test2a.memerize.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

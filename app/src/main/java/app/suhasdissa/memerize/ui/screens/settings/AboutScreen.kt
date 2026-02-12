@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 7/9/23, 3:39 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.screens.settings
+package app.test2a.memerize.ui.screens.settings
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -26,10 +26,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import app.suhasdissa.memerize.R
-import app.suhasdissa.memerize.backend.viewmodels.CheckUpdateViewModel
-import app.suhasdissa.memerize.ui.components.SettingItem
-import app.suhasdissa.memerize.utils.openBrowser
+import app.test2a.memerize.R
+import app.test2a.memerize.backend.viewmodels.CheckUpdateViewModel
+import app.test2a.memerize.ui.components.SettingItem
+import app.test2a.memerize.utils.openBrowser
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,7 +38,7 @@ fun AboutScreen(
     updateViewModel: CheckUpdateViewModel = viewModel()
 ) {
     val context = LocalContext.current
-    val githubRepo = "https://github.com/SuhasDissa/MemerizeApp"
+    val githubRepo = "https://github.com/test2a/MemerizeApp"
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),

@@ -1,18 +1,18 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 11/25/22, 6:27 PM
 Copyright (c) 2022
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize
+package app.test2a.memerize
 
 import android.app.Application
-import app.suhasdissa.memerize.backend.database.MemeDatabase
-import app.suhasdissa.memerize.utils.UpdateUtil
-import app.suhasdissa.memerize.utils.defaultImageCacheSize
-import app.suhasdissa.memerize.utils.imageCacheKey
-import app.suhasdissa.memerize.utils.preferences
+import app.test2a.memerize.backend.database.MemeDatabase
+import app.test2a.memerize.utils.UpdateUtil
+import app.test2a.memerize.utils.defaultImageCacheSize
+import app.test2a.memerize.utils.imageCacheKey
+import app.test2a.memerize.utils.preferences
 import coil.ImageLoader
 import coil.ImageLoaderFactory
 import coil.disk.DiskCache

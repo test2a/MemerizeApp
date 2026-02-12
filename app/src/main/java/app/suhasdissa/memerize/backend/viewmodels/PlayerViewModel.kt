@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.backend.viewmodels
+package app.test2a.memerize.backend.viewmodels
 
 import android.content.Context
 import android.os.Build
@@ -10,8 +10,8 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.common.Player
-import app.suhasdissa.memerize.backend.database.entity.Meme
-import app.suhasdissa.memerize.utils.RedditVideoDownloader
+import app.test2a.memerize.backend.database.entity.Meme
+import app.test2a.memerize.utils.RedditVideoDownloader
 import java.util.UUID
 import kotlinx.coroutines.launch
 

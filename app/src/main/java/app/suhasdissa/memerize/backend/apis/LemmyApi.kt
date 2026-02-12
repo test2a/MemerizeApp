@@ -1,14 +1,14 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 8/3/23, 4:40 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.backend.apis
+package app.test2a.memerize.backend.apis
 
-import app.suhasdissa.memerize.backend.model.LemmyAbout
-import app.suhasdissa.memerize.backend.model.LemmyResponse
+import app.test2a.memerize.backend.model.LemmyAbout
+import app.test2a.memerize.backend.model.LemmyResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path

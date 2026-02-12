@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 12/20/22, 8:56 AM
 Copyright (c) 2022
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.components
+package app.test2a.memerize.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -41,7 +41,7 @@ fun VideoCard(
                 modifier = modifier.size(64.dp),
                 imageVector = Icons.Default.PlayCircle,
                 contentDescription = stringResource(
-                    app.suhasdissa.memerize.R.string.play_video_hint
+                    app.test2a.memerize.R.string.play_video_hint
                 )
             )
         }

@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 8/7/23, 6:41 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.backend.apis
+package app.test2a.memerize.backend.apis
 
 import retrofit2.http.GET
 import retrofit2.http.Headers

@@ -1,13 +1,13 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 7/30/23, 6:12 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.backend.model
+package app.test2a.memerize.backend.model
 
-import app.suhasdissa.memerize.R
+import app.test2a.memerize.R
 
 sealed class Sort(open val name: Int, val redditSort: String, open val lemmySort: String) {
     object Hot : Sort(R.string.hot, "hot", "Hot")

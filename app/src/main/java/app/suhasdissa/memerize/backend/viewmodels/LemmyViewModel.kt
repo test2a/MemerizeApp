@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 11/23/22, 4:16 PM
 Copyright (c) 2022
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.backend.viewmodels
+package app.test2a.memerize.backend.viewmodels
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -16,11 +16,11 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import app.suhasdissa.memerize.MemerizeApplication
-import app.suhasdissa.memerize.backend.database.entity.LemmyCommunity
-import app.suhasdissa.memerize.backend.model.Sort
-import app.suhasdissa.memerize.backend.repositories.LemmyMemeRepository
-import app.suhasdissa.memerize.backend.viewmodels.state.MemeUiState
+import app.test2a.memerize.MemerizeApplication
+import app.test2a.memerize.backend.database.entity.LemmyCommunity
+import app.test2a.memerize.backend.model.Sort
+import app.test2a.memerize.backend.repositories.LemmyMemeRepository
+import app.test2a.memerize.backend.viewmodels.state.MemeUiState
 import kotlinx.coroutines.launch
 
 class LemmyViewModel(private val lemmyRepository: LemmyMemeRepository) :

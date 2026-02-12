@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 11/23/22, 4:16 PM
 Copyright (c) 2022
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.screens.settings
+package app.test2a.memerize.ui.screens.settings
 
 import android.content.Intent
 import android.net.Uri
@@ -38,11 +38,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.edit
-import app.suhasdissa.memerize.R
-import app.suhasdissa.memerize.ui.components.CacheSizeDialog
-import app.suhasdissa.memerize.ui.components.SettingItem
-import app.suhasdissa.memerize.utils.SaveDirectoryKey
-import app.suhasdissa.memerize.utils.preferences
+import app.test2a.memerize.R
+import app.test2a.memerize.ui.components.CacheSizeDialog
+import app.test2a.memerize.ui.components.SettingItem
+import app.test2a.memerize.utils.SaveDirectoryKey
+import app.test2a.memerize.utils.preferences
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

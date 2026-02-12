@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 7/30/23, 12:15 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.components
+package app.test2a.memerize.ui.components
 
 import android.view.SoundEffectConstants
 import androidx.compose.foundation.Image
@@ -31,8 +31,8 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import app.suhasdissa.memerize.Destination
-import app.suhasdissa.memerize.R
+import app.test2a.memerize.Destination
+import app.test2a.memerize.R
 
 @Composable
 fun NavDrawerContent(

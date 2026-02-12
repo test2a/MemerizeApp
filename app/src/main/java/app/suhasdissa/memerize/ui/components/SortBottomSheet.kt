@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 8/14/23, 1:10 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.components
+package app.test2a.memerize.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,8 +22,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import app.suhasdissa.memerize.R
-import app.suhasdissa.memerize.backend.model.Sort
+import app.test2a.memerize.R
+import app.test2a.memerize.backend.model.Sort
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 7/30/23, 2:18 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.backend.viewmodels
+package app.test2a.memerize.backend.viewmodels
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -16,10 +16,10 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import app.suhasdissa.memerize.MemerizeApplication
-import app.suhasdissa.memerize.backend.database.entity.RedditCommunity
-import app.suhasdissa.memerize.backend.repositories.RedditCommunityRepository
-import app.suhasdissa.memerize.backend.viewmodels.state.AboutCommunityState
+import app.test2a.memerize.MemerizeApplication
+import app.test2a.memerize.backend.database.entity.RedditCommunity
+import app.test2a.memerize.backend.repositories.RedditCommunityRepository
+import app.test2a.memerize.backend.viewmodels.state.AboutCommunityState
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch

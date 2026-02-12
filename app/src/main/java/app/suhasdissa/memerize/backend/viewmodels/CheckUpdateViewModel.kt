@@ -1,18 +1,18 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 7/9/23, 3:34 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.backend.viewmodels
+package app.test2a.memerize.backend.viewmodels
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import app.suhasdissa.memerize.utils.UpdateUtil
+import app.test2a.memerize.utils.UpdateUtil
 import kotlinx.coroutines.launch
 
 class CheckUpdateViewModel : ViewModel() {

@@ -1,17 +1,17 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 8/3/23, 8:01 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.backend.database.dao
+package app.test2a.memerize.backend.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import app.suhasdissa.memerize.backend.database.entity.LemmyMeme
+import app.test2a.memerize.backend.database.entity.LemmyMeme
 
 @Dao
 interface LemmyMemeDAO {

@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 8/15/23, 12:48 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.screens.secondary
+package app.test2a.memerize.ui.screens.secondary
 
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -16,10 +16,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
-import app.suhasdissa.memerize.backend.database.entity.Meme
-import app.suhasdissa.memerize.backend.viewmodels.LemmyViewModel
-import app.suhasdissa.memerize.backend.viewmodels.RedditViewModel
-import app.suhasdissa.memerize.backend.viewmodels.state.MemeUiState
+import app.test2a.memerize.backend.database.entity.Meme
+import app.test2a.memerize.backend.viewmodels.LemmyViewModel
+import app.test2a.memerize.backend.viewmodels.RedditViewModel
+import app.test2a.memerize.backend.viewmodels.state.MemeUiState
 
 @Composable
 fun RedditMemeFeed(

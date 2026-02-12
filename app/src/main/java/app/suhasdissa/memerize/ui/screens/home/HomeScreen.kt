@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.ui.screens.home
+package app.test2a.memerize.ui.screens.home
 
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,14 +25,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import app.suhasdissa.memerize.Destination
-import app.suhasdissa.memerize.R
-import app.suhasdissa.memerize.backend.database.entity.RedditCommunity
-import app.suhasdissa.memerize.backend.viewmodels.LemmyCommunityViewModel
-import app.suhasdissa.memerize.backend.viewmodels.LemmyViewModel
-import app.suhasdissa.memerize.backend.viewmodels.RedditCommunityViewModel
-import app.suhasdissa.memerize.backend.viewmodels.RedditViewModel
-import app.suhasdissa.memerize.ui.components.HighlightCard
+import app.test2a.memerize.Destination
+import app.test2a.memerize.R
+import app.test2a.memerize.backend.database.entity.RedditCommunity
+import app.test2a.memerize.backend.viewmodels.LemmyCommunityViewModel
+import app.test2a.memerize.backend.viewmodels.LemmyViewModel
+import app.test2a.memerize.backend.viewmodels.RedditCommunityViewModel
+import app.test2a.memerize.backend.viewmodels.RedditViewModel
+import app.test2a.memerize.ui.components.HighlightCard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

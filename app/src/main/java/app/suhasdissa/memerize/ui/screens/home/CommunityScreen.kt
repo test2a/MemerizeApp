@@ -1,11 +1,11 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 7/30/23, 1:20 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.screens.home
+package app.test2a.memerize.ui.screens.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -52,11 +52,11 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import app.suhasdissa.memerize.R
-import app.suhasdissa.memerize.backend.database.entity.LemmyCommunity
-import app.suhasdissa.memerize.backend.viewmodels.LemmyCommunityViewModel
-import app.suhasdissa.memerize.backend.viewmodels.state.AboutCommunityState
-import app.suhasdissa.memerize.ui.components.SubredditCardCompact
+import app.test2a.memerize.R
+import app.test2a.memerize.backend.database.entity.LemmyCommunity
+import app.test2a.memerize.backend.viewmodels.LemmyCommunityViewModel
+import app.test2a.memerize.backend.viewmodels.state.AboutCommunityState
+import app.test2a.memerize.ui.components.SubredditCardCompact
 import coil.compose.AsyncImage
 
 @OptIn(ExperimentalMaterial3Api::class)

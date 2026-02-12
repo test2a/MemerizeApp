@@ -9,11 +9,11 @@
 <br>
 
 <div align="center">
-    <img alt="License" src="https://img.shields.io/github/license/SuhasDissa/MemerizeApp?color=c3e7ff&style=flat-square">
-    <img alt="Downloads" src="https://img.shields.io/github/downloads/SuhasDissa/MemerizeApp/total.svg?color=c3e7ff&style=flat-square">
-    <img alt="Last commit" src="https://img.shields.io/github/last-commit/SuhasDissa/MemerizeApp?color=c3e7ff&style=flat-square">
-    <img alt="Repo size" src="https://img.shields.io/github/repo-size/SuhasDissa/MemerizeApp?color=c3e7ff&style=flat-square">
-    <img alt="Stars" src="https://img.shields.io/github/stars/SuhasDissa/MemerizeApp?color=c3e7ff&style=flat-square">
+    <img alt="License" src="https://img.shields.io/github/license/test2a/MemerizeApp?color=c3e7ff&style=flat-square">
+    <img alt="Downloads" src="https://img.shields.io/github/downloads/test2a/MemerizeApp/total.svg?color=c3e7ff&style=flat-square">
+    <img alt="Last commit" src="https://img.shields.io/github/last-commit/test2a/MemerizeApp?color=c3e7ff&style=flat-square">
+    <img alt="Repo size" src="https://img.shields.io/github/repo-size/test2a/MemerizeApp?color=c3e7ff&style=flat-square">
+    <img alt="Stars" src="https://img.shields.io/github/stars/test2a/MemerizeApp?color=c3e7ff&style=flat-square">
     <br>
 </div>
 
@@ -44,7 +44,7 @@
 
 [<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png"
     alt="Get it on GitHub"
-    height="80" />](https://github.com/SuhasDissa/MemerizeApp/releases/latest)
+    height="80" />](https://github.com/test2a/MemerizeApp/releases/latest)
 
 ## Useful Links
 <a href="https://trello.com/b/CNVfaAYD/memerize-app"><img src="https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white" height="40"></a>

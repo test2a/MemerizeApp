@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.ui.components
+package app.test2a.memerize.ui.components
 
 import android.view.SoundEffectConstants
 import androidx.compose.foundation.clickable

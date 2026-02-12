@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.ui.screens.secondary
+package app.test2a.memerize.ui.screens.secondary
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -60,15 +60,15 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
-import app.suhasdissa.memerize.R
-import app.suhasdissa.memerize.backend.database.entity.Meme
-import app.suhasdissa.memerize.backend.viewmodels.DownloadState
-import app.suhasdissa.memerize.backend.viewmodels.PlayerViewModel
-import app.suhasdissa.memerize.backend.viewmodels.playPause
-import app.suhasdissa.memerize.utils.PlayerState
-import app.suhasdissa.memerize.utils.openBrowser
-import app.suhasdissa.memerize.utils.positionAndDurationState
-import app.suhasdissa.memerize.utils.shareUrl
+import app.test2a.memerize.R
+import app.test2a.memerize.backend.database.entity.Meme
+import app.test2a.memerize.backend.viewmodels.DownloadState
+import app.test2a.memerize.backend.viewmodels.PlayerViewModel
+import app.test2a.memerize.backend.viewmodels.playPause
+import app.test2a.memerize.utils.PlayerState
+import app.test2a.memerize.utils.openBrowser
+import app.test2a.memerize.utils.positionAndDurationState
+import app.test2a.memerize.utils.shareUrl
 
 @SuppressLint("UnsafeOptInUsageError")
 @OptIn(ExperimentalMaterial3Api::class)

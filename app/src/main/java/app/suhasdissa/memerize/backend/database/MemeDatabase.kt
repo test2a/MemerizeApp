@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.backend.database
+package app.test2a.memerize.backend.database
 
 import android.content.Context
 import androidx.room.AutoMigration
@@ -6,14 +6,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import app.suhasdissa.memerize.backend.database.dao.CommunityDAO
-import app.suhasdissa.memerize.backend.database.dao.LemmyMemeDAO
-import app.suhasdissa.memerize.backend.database.dao.RedditMemeDao
-import app.suhasdissa.memerize.backend.database.dao.SubredditDAO
-import app.suhasdissa.memerize.backend.database.entity.LemmyCommunity
-import app.suhasdissa.memerize.backend.database.entity.LemmyMeme
-import app.suhasdissa.memerize.backend.database.entity.RedditCommunity
-import app.suhasdissa.memerize.backend.database.entity.RedditMeme
+import app.test2a.memerize.backend.database.dao.CommunityDAO
+import app.test2a.memerize.backend.database.dao.LemmyMemeDAO
+import app.test2a.memerize.backend.database.dao.RedditMemeDao
+import app.test2a.memerize.backend.database.dao.SubredditDAO
+import app.test2a.memerize.backend.database.entity.LemmyCommunity
+import app.test2a.memerize.backend.database.entity.LemmyMeme
+import app.test2a.memerize.backend.database.entity.RedditCommunity
+import app.test2a.memerize.backend.database.entity.RedditMeme
 
 @Database(
     entities = [RedditMeme::class, RedditCommunity::class, LemmyMeme::class, LemmyCommunity::class],

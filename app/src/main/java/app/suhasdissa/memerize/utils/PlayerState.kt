@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.utils
+package app.test2a.memerize.utils
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State

@@ -1,18 +1,18 @@
 /*******************************************************************************
 Created By Suhas Dissanayake on 8/3/23, 7:58 PM
 Copyright (c) 2023
-https://github.com/SuhasDissa/
+https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.backend.database.dao
+package app.test2a.memerize.backend.database.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import app.suhasdissa.memerize.backend.database.entity.LemmyCommunity
+import app.test2a.memerize.backend.database.entity.LemmyCommunity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

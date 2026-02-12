@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.ui.screens.secondary
+package app.test2a.memerize.ui.screens.secondary
 
 import android.view.SoundEffectConstants
 import androidx.compose.foundation.gestures.awaitEachGesture
@@ -43,11 +43,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.lifecycle.viewmodel.compose.viewModel
-import app.suhasdissa.memerize.R
-import app.suhasdissa.memerize.backend.database.entity.Meme
-import app.suhasdissa.memerize.backend.viewmodels.DownloadState
-import app.suhasdissa.memerize.backend.viewmodels.PhotoViewModel
-import app.suhasdissa.memerize.utils.openBrowser
+import app.test2a.memerize.R
+import app.test2a.memerize.backend.database.entity.Meme
+import app.test2a.memerize.backend.viewmodels.DownloadState
+import app.test2a.memerize.backend.viewmodels.PhotoViewModel
+import app.test2a.memerize.utils.openBrowser
 import coil.compose.AsyncImage
 import java.lang.Float.max
 
