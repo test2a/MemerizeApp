@@ -16,6 +16,10 @@ import app.suhasdissa.memerize.backend.apis.FileDownloadApi
 import app.suhasdissa.memerize.backend.apis.RedditVideoApi
 import java.nio.ByteBuffer
 import java.util.UUID
+import java.io.File
+import java.io.FileOutputStream
+import java.io.BufferedInputStream
+import java.io.BufferedOutputStream
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -47,7 +51,7 @@ class RedditVideoDownloader {
         outputFileName: String
     ): Boolean {
         val urlS = getRedditUrls(url) ?: return false
-        val redditUrl = Regex("https?://v\\.redd\\.it/\\S+/").find(url)?.value ?: return false
+        val redditUrl = Regex("https?://v\\.redd\.it/\\S+/\").find(url)?.value ?: return false
 
         return withContext(Dispatchers.IO) {
             val files = listOfNotNull(
@@ -56,12 +60,25 @@ class RedditVideoDownloader {
             )
             val result = files.awaitAll()
 
-            val videofilePath = result.getOrNull(0)?.uri?.path ?: return@withContext false
-            val audioFIlePath = result.getOrNull(1)?.uri?.path
+            val videoFile = result.getOrNull(0) ?: return@withContext false
+            val audioFile = result.getOrNull(1)
 
             val outputFile = getOutputFile(outputFileName, context) ?: return@withContext false
-            val pfd = context.contentResolver.openFileDescriptor(outputFile.uri, "w")
-            muxVideoAndAudio(videofilePath, audioFIlePath, pfd!!)
+            var videoPfd: ParcelFileDescriptor? = null
+            var audioPfd: ParcelFileDescriptor? = null
+            var outPfd: ParcelFileDescriptor? = null
+            try {
+                videoPfd = ParcelFileDescriptor.open(videoFile, ParcelFileDescriptor.MODE_READ_ONLY)
+                audioPfd = audioFile?.let { ParcelFileDescriptor.open(it, ParcelFileDescriptor.MODE_READ_ONLY) }
+                outPfd = context.contentResolver.openFileDescriptor(outputFile.uri, "w")
+                if (outPfd == null) return@withContext false
+                val success = muxVideoAndAudio(videoPfd, audioPfd, outPfd)
+                success
+            } finally {
+                try { videoPfd?.close() } catch (_: Exception) {}
+                try { audioPfd?.close() } catch (_: Exception) {}
+                try { outPfd?.close() } catch (_: Exception) {}
+            }
         }
     }
 
@@ -71,13 +88,13 @@ class RedditVideoDownloader {
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("WrongConstant")
     private fun muxVideoAndAudio(
-        videoFilePath: String,
-        audioFilePath: String?,
+        videoPfd: ParcelFileDescriptor,
+        audioPfd: ParcelFileDescriptor?,
         pfd: ParcelFileDescriptor
     ): Boolean {
         try {
             val videoExtractor = MediaExtractor()
-            videoExtractor.setDataSource(videoFilePath)
+            videoExtractor.setDataSource(videoPfd.fileDescriptor)
             val muxer = MediaMuxer(pfd.fileDescriptor, MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4)
             videoExtractor.selectTrack(0)
             val videoFormat = videoExtractor.getTrackFormat(0)
@@ -94,8 +111,8 @@ class RedditVideoDownloader {
             val audioExtractor = MediaExtractor()
             val audioBufferInfo = MediaCodec.BufferInfo()
             var audioTrack = -1
-            if (audioFilePath != null) {
-                audioExtractor.setDataSource(audioFilePath)
+            if (audioPfd != null) {
+                audioExtractor.setDataSource(audioPfd.fileDescriptor)
                 audioExtractor.selectTrack(0)
                 val audioFormat = audioExtractor.getTrackFormat(0)
                 audioExtractor.seekTo(0, MediaExtractor.SEEK_TO_CLOSEST_SYNC)
@@ -137,23 +154,31 @@ class RedditVideoDownloader {
             Log.e("Video Muxer", e.message, e)
             return false
         }
-        pfd.close()
         return true
     }
 
-    private suspend fun downloadFile(url: String, context: Context): DocumentFile? {
+    private suspend fun downloadFile(url: String, context: Context): File? {
         return withContext(Dispatchers.IO) {
             try {
                 val call = fileDownloadApiService.downloadFile(url)
                 val response = call.execute()
                 if (response.isSuccessful) {
-                    val bytes = response.body()?.bytes()
-                    val outputFile = getTempFile(context)
-                    val outputStream = context.contentResolver.openOutputStream(outputFile.uri)!!
-                    outputStream.write(bytes)
-                    outputStream.flush()
-                    outputStream.close()
-                    outputFile
+                    val body = response.body() ?: return@withContext null
+                    val inputStream = BufferedInputStream(body.byteStream())
+                    val tempFile = getTempFile(context)
+                    val outputStream = BufferedOutputStream(FileOutputStream(tempFile))
+                    try {
+                        val buffer = ByteArray(8 * 1024)
+                        var read: Int
+                        while (inputStream.read(buffer).also { read = it } != -1) {
+                            outputStream.write(buffer, 0, read)
+                        }
+                        outputStream.flush()
+                    } finally {
+                        try { inputStream.close() } catch (_: Exception) {}
+                        try { outputStream.close() } catch (_: Exception) {}
+                    }
+                    tempFile
                 } else {
                     null
                 }
@@ -219,11 +244,11 @@ class RedditVideoDownloader {
         }
     }
 
-    private suspend fun getTempFile(context: Context): DocumentFile {
+    private suspend fun getTempFile(context: Context): File {
         return withContext(Dispatchers.IO) {
-            val saveDir = DocumentFile.fromFile(context.cacheDir)
-
-            saveDir.createFile("video/mp4", "${UUID.randomUUID()}")!!
+            val file = File(context.cacheDir, "${UUID.randomUUID()}.mp4")
+            if (!file.exists()) file.createNewFile()
+            file
         }
     }
 }
