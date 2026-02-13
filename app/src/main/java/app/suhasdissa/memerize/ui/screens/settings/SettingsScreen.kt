@@ -46,6 +46,7 @@ import app.test2a.memerize.utils.SaveDirectoryKey
 import app.test2a.memerize.utils.preferences
 
 @OptIn(ExperimentalMaterial3Api::class)
+@Composable
 fun SettingsScreen(
     onDrawerOpen: () -> Unit,
     onAboutClick: () -> Unit
