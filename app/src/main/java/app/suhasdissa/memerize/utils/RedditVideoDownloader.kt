@@ -230,8 +230,8 @@ class RedditVideoDownloader {
             // Fallback: try to parse DASH manifest directly for video/audio URLs
             if (url.endsWith(".mpd")) {
                 val baseUrl = url.substringBeforeLast('/') + "/"
-                val videoRegex = Regex("<BaseURL>(DASH_\d+\.mp4)</BaseURL>")
-                val audioRegex = Regex("<BaseURL>(DASH_AUDIO_\d+\.mp4)</BaseURL>")
+                val videoRegex = Regex("<BaseURL>(DASH_\\d+\\.mp4)</BaseURL>")
+                val audioRegex = Regex("<BaseURL>(DASH_AUDIO_\\d+\\.mp4)</BaseURL>")
                 val video = videoRegex.findAll(text).map { it.groupValues[1] }.lastOrNull()
                 val audio = audioRegex.findAll(text).map { it.groupValues[1] }.lastOrNull()
                 if (video != null) {
