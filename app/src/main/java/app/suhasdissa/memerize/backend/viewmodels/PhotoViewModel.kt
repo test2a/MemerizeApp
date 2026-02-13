@@ -45,6 +45,7 @@ class PhotoViewModel : ViewModel() {
         }
         return null
     }
+import app.suhasdissa.memerize.utils.*
 
     fun savePhotoToDisk(meme: Meme, context: Context) {
         viewModelScope.launch(Dispatchers.IO) {

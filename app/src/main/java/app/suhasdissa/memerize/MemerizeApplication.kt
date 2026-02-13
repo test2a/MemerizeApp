@@ -25,6 +25,7 @@ class MemerizeApplication : Application(), ImageLoaderFactory {
         super.onCreate()
         container = DefaultAppContainer(database)
         UpdateUtil.getCurrentVersion(this.applicationContext)
+        import app.suhasdissa.memerize.utils.*
     }
 
     override fun newImageLoader(): ImageLoader {

@@ -6,6 +6,7 @@ All Rights Reserved
  ******************************************************************************/
 
 package app.test2a.memerize.ui.components
+import app.test2a.memerize.utils.*
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.grid.GridCells

@@ -6,6 +6,7 @@ All Rights Reserved
  ******************************************************************************/
 
 package app.test2a.memerize.ui.screens.settings
+import app.test2a.memerize.utils.*
 
 import android.content.Intent
 import android.net.Uri
