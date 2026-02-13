@@ -13,9 +13,9 @@ import android.util.Log
 import app.suhasdissa.memerize.utils.InAppLogger
 import androidx.annotation.RequiresApi
 import androidx.documentfile.provider.DocumentFile
-import app.test2a.memerize.backend.apis.FileDownloadApi
+// removed duplicate/incorrect import
 import app.suhasdissa.memerize.backend.apis.FileDownloadApi
-import app.test2a.memerize.backend.apis.RedditVideoApi
+// removed duplicate/incorrect import
 import app.suhasdissa.memerize.backend.apis.RedditVideoApi
 import app.suhasdissa.memerize.utils.preferences
 import app.suhasdissa.memerize.utils.SaveDirectoryKey
