@@ -46,7 +46,6 @@ import app.test2a.memerize.utils.SaveDirectoryKey
 import app.test2a.memerize.utils.preferences
 
 @OptIn(ExperimentalMaterial3Api::class)
-import app.suhasdissa.memerize.ui.components.CacheSizeDialog
 fun SettingsScreen(
     onDrawerOpen: () -> Unit,
     onAboutClick: () -> Unit
