@@ -1,11 +1,4 @@
-/*******************************************************************************
-Created By Suhas Dissanayake on 8/4/23, 2:32 PM
-Copyright (c) 2023
-https://github.com/test2a/
-All Rights Reserved
- ******************************************************************************/
 
-package app.test2a.memerize.utils
 package app.suhasdissa.memerize.utils
 
 import android.content.Context

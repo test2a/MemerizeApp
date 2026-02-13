@@ -1,7 +1,7 @@
 [日本語](README.ja-JP.md)
 
 <div align="center">
-  <img width="150" src="/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" alt="App icon">
+  <img width="150" src="/icon.png" alt="App icon">
   <h1 align="center">MemerizeNeo</h1>
   <b>MemerizeNeo</b> is a handy meme viewer app for Reddit and Lemmy
 </div>
