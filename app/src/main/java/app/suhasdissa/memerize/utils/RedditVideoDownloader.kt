@@ -236,6 +236,8 @@ class RedditVideoDownloader {
                 val audio = audioRegex.findAll(text).map { it.groupValues[1] }.lastOrNull()
                 if (video != null) {
                     return video to audio
+                } else {
+                    InAppLogger.log("DASH manifest content for debugging:\n" + text.take(2000))
                 }
             }
             null
