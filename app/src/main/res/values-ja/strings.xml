@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Memerize</string>
+    <string name="app_name" translatable="false">Memerize Neo</string>
     <string name="loading_failed">読み込みに失敗しました</string>
     <string name="meme_photo">ミーム写真</string>
     <string name="reddit_today_btn">今日</string>

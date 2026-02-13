@@ -223,7 +223,22 @@ class RedditVideoDownloader {
     private suspend fun getRedditUrls(url: String): Pair<String, String?>? {
         return try {
             val text = apiService.getRedditData(url)
-            return matchRedditUrls(text)
+            val redditUrls = matchRedditUrls(text)
+            if (redditUrls != null) {
+                return redditUrls
+            }
+            // Fallback: try to parse DASH manifest directly for video/audio URLs
+            if (url.endsWith(".mpd")) {
+                val baseUrl = url.substringBeforeLast('/') + "/"
+                val videoRegex = Regex("<BaseURL>(DASH_\d+\.mp4)</BaseURL>")
+                val audioRegex = Regex("<BaseURL>(DASH_AUDIO_\d+\.mp4)</BaseURL>")
+                val video = videoRegex.findAll(text).map { it.groupValues[1] }.lastOrNull()
+                val audio = audioRegex.findAll(text).map { it.groupValues[1] }.lastOrNull()
+                if (video != null) {
+                    return video to audio
+                }
+            }
+            null
         } catch (e: Exception) {
             Log.e("Reddit Urls", e.message, e)
             InAppLogger.log("Reddit Urls: ${e.message}\n${e.stackTraceToString()}")
