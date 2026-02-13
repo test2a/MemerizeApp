@@ -1,5 +1,5 @@
 
-package app.suhasdissa.memerize.utils
+package app.test2a.memerize.utils
 
 import android.content.Context
 import android.content.SharedPreferences

@@ -17,8 +17,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.test2a.memerize.BuildConfig
 import app.test2a.memerize.backend.database.entity.Meme
-import app.suhasdissa.memerize.utils.SaveDirectoryKey
-import app.suhasdissa.memerize.utils.preferences
+import app.test2a.memerize.utils.SaveDirectoryKey
+import app.test2a.memerize.utils.preferences
 import coil.ImageLoader
 import coil.request.ImageRequest
 import coil.request.SuccessResult

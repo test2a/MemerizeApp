@@ -20,7 +20,7 @@ import app.test2a.memerize.ui.screens.primary.RedditMemeScreen
 import app.test2a.memerize.ui.screens.secondary.LemmyMemeFeed
 import app.test2a.memerize.ui.screens.secondary.RedditMemeFeed
 import app.test2a.memerize.ui.screens.settings.AboutScreen
-import app.test2a.memerize.ui.screens.settings.SettingsScreen
+import app.suhasdissa.memerize.ui.screens.settings.SettingsScreen
 
 @Composable
 fun AppNavHost(

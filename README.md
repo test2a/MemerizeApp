@@ -46,4 +46,4 @@
     height="80">](https://github.com/test2a/MemerizeApp/releases/latest)
 
 ## Useful Links
-fork of the abandoned project [SuhasDissa/MemerizeApp](https://github.com/SuhasDissa/MemerizeApp)
+fork of the abandoned project [test2a/MemerizeApp](https://github.com/test2a/MemerizeApp)

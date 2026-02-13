@@ -1,4 +1,4 @@
-package app.suhasdissa.memerize.utils
+package app.test2a.memerize.utils
 
 import java.text.SimpleDateFormat
 import java.util.Date

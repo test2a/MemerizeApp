@@ -5,8 +5,8 @@ https://github.com/test2a/
 All Rights Reserved
  ******************************************************************************/
 
-package app.suhasdissa.memerize.ui.components
-import app.suhasdissa.memerize.utils.*
+package app.test2a.memerize.ui.components
+import app.test2a.memerize.utils.*
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -23,9 +23,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.test2a.memerize.R
-import app.suhasdissa.memerize.utils.defaultImageCacheSize
-import app.suhasdissa.memerize.utils.imageCacheKey
-import app.suhasdissa.memerize.utils.rememberPreference
+import app.test2a.memerize.utils.defaultImageCacheSize
+import app.test2a.memerize.utils.imageCacheKey
+import app.test2a.memerize.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
