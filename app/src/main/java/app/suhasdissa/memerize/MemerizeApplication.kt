@@ -9,7 +9,7 @@ package app.test2a.memerize
 
 import android.app.Application
 import app.test2a.memerize.backend.database.MemeDatabase
-import app.suhasdissa.memerize.utils.UpdateUtil
+import app.test2a.memerize.utils.UpdateUtil
 import app.test2a.memerize.utils.defaultImageCacheSize
 import app.test2a.memerize.utils.imageCacheKey
 import app.test2a.memerize.utils.preferences
