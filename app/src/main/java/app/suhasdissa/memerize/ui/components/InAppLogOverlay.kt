@@ -25,7 +25,6 @@ fun InAppLogOverlay() {
     val clipboardManager: ClipboardManager = LocalClipboardManager.current
     var expanded by remember { mutableStateOf(false) }
     val logs = remember { mutableStateOf(InAppLogger.getLogs()) }
-    val context = LocalContext.current
 
     // Update logs every second
     LaunchedEffect(Unit) {

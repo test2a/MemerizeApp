@@ -53,8 +53,16 @@ class RedditVideoDownloader {
         url: String,
         outputFileName: String
     ): Boolean {
-        val urlS = getRedditUrls(url) ?: return false
-            val redditUrl = Regex("https?://v\\.redd\\.it/\\S+/").find(url)?.value ?: return false
+
+        InAppLogger.log("Download started for $url as $outputFileName")
+        val urlS = getRedditUrls(url) ?: run {
+            InAppLogger.log("Failed to get Reddit URLs for $url")
+            return false
+        }
+        val redditUrl = Regex("https?://v\\.redd\\.it/\\S+/").find(url)?.value ?: run {
+            InAppLogger.log("Failed to extract Reddit base URL from $url")
+            return false
+        }
 
         return withContext(Dispatchers.IO) {
             val files = listOfNotNull(
@@ -63,10 +71,16 @@ class RedditVideoDownloader {
             )
             val result = files.awaitAll()
 
-            val videoFile = result.getOrNull(0) ?: return@withContext false
+            val videoFile = result.getOrNull(0) ?: run {
+                InAppLogger.log("Video file download failed for $url")
+                return@withContext false
+            }
             val audioFile = result.getOrNull(1)
 
-            val outputFile = getOutputFile(outputFileName, context) ?: return@withContext false
+            val outputFile = getOutputFile(outputFileName, context) ?: run {
+                InAppLogger.log("Failed to get output file for $outputFileName")
+                return@withContext false
+            }
             var videoPfd: ParcelFileDescriptor? = null
             var audioPfd: ParcelFileDescriptor? = null
             var outPfd: ParcelFileDescriptor? = null
@@ -74,8 +88,17 @@ class RedditVideoDownloader {
                 videoPfd = ParcelFileDescriptor.open(videoFile, ParcelFileDescriptor.MODE_READ_ONLY)
                 audioPfd = audioFile?.let { ParcelFileDescriptor.open(it, ParcelFileDescriptor.MODE_READ_ONLY) }
                 outPfd = context.contentResolver.openFileDescriptor(outputFile.uri, "w")
-                if (outPfd == null) return@withContext false
+                if (outPfd == null) {
+                    InAppLogger.log("Failed to open output file descriptor for $outputFileName")
+                    return@withContext false
+                }
+                InAppLogger.log("Muxing video and audio for $outputFileName")
                 val success = muxVideoAndAudio(videoPfd, audioPfd, outPfd)
+                if (success) {
+                    InAppLogger.log("Download and muxing successful for $outputFileName")
+                } else {
+                    InAppLogger.log("Muxing failed for $outputFileName")
+                }
                 success
             } finally {
                 try { videoPfd?.close() } catch (_: Exception) {}
@@ -164,6 +187,7 @@ class RedditVideoDownloader {
     private suspend fun downloadFile(url: String, context: Context): File? {
         return withContext(Dispatchers.IO) {
             try {
+                InAppLogger.log("Starting file download: $url")
                 val call = fileDownloadApiService.downloadFile(url)
                 val response = call.execute()
                 if (response.isSuccessful) {
@@ -182,8 +206,10 @@ class RedditVideoDownloader {
                         try { inputStream.close() } catch (_: Exception) {}
                         try { outputStream.close() } catch (_: Exception) {}
                     }
+                    InAppLogger.log("File download successful: $url -> ${tempFile.absolutePath}")
                     tempFile
                 } else {
+                    InAppLogger.log("File download failed (HTTP ${'$'}{response.code()}): $url")
                     null
                 }
             } catch (e: Exception) {
