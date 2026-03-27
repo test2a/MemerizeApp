@@ -14,7 +14,6 @@ import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Surface
-import app.test2a.memerize.ui.components.InAppLogOverlay
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -69,7 +68,7 @@ fun MemerizeApp() {
                     modifier = Modifier.fillMaxSize()
                 )
             }
-            InAppLogOverlay()
+            // In-app log overlay removed
         }
     }
 }
