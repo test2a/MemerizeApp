@@ -254,25 +254,29 @@ class RedditVideoDownloader {
     }
 
     private fun matchRedditUrls(text: String): Pair<String, String?>? {
-        val regex = Regex("<BaseURL>(DASH(_AUDIO)?_\\d+\\.\\S+)</BaseURL>")
+        // collect any <BaseURL> entries that point to .mp4 files
+        val regex = Regex("<BaseURL>([^<]+\\.mp4)</BaseURL>")
         val matcher = regex.findAll(text)
 
-        val video = mutableListOf<String?>()
-        val audio = mutableListOf<String?>()
+        val video = mutableListOf<String>()
+        val audio = mutableListOf<String>()
 
         for (matchResult in matcher) {
-            val match = matchResult.groups[1]?.value
-            val isAudio = matchResult.groups[2]?.value
-
-            if (isAudio != null) {
+            val match = matchResult.groups[1]?.value ?: continue
+            if (match.contains("audio", ignoreCase = true)) {
                 audio.add(match)
             } else {
                 video.add(match)
             }
         }
 
-        val selectedVideo = video.takeIf { it.isNotEmpty() }?.last() ?: return null
-        val selectedAudio = audio.takeIf { it.isNotEmpty() }?.last()
+        InAppLogger.log("matchRedditUrls found video candidates=${video.joinToString(", ")}")
+        InAppLogger.log("matchRedditUrls found audio candidates=${audio.joinToString(", ")}")
+
+        val selectedVideo = video.lastOrNull() ?: return null
+        val selectedAudio = audio.lastOrNull()
+
+        InAppLogger.log("matchRedditUrls selected video=$selectedVideo audio=$selectedAudio")
 
         return selectedVideo to selectedAudio
     }
