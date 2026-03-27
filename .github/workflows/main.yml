@@ -23,12 +23,12 @@ jobs:
     name: Generate APK
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Node24 test action (local)
         uses: ./.github/actions/node24-test
       - name: Show node in runner
         run: node -v || true
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v2
       - name: Setup JDK
