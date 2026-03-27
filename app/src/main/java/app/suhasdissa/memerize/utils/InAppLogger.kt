@@ -1,22 +1,13 @@
 package app.test2a.memerize.utils
 
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+import android.util.Log
 
 object InAppLogger {
-    private const val MAX_LOGS = 200
-    private val logBuffer = mutableListOf<String>()
-    private val dateFormat = SimpleDateFormat("HH:mm:ss.SSS", Locale.US)
-
+    // Overlay removed: forward logs to Android `Log` and disable in-app buffering
     fun log(msg: String, tag: String = "AppLog") {
-        val ts = dateFormat.format(Date())
-        synchronized(logBuffer) {
-            logBuffer.add("[$ts][$tag] $msg")
-            if (logBuffer.size > MAX_LOGS) logBuffer.removeAt(0)
-        }
+        Log.i(tag, msg)
     }
 
-    fun getLogs(): String = synchronized(logBuffer) { logBuffer.joinToString("\n") }
-    fun clear() = synchronized(logBuffer) { logBuffer.clear() }
+    fun getLogs(): String = "" // no in-app overlay
+    fun clear() {} // no-op
 }
