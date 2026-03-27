@@ -1,0 +1,5 @@
+name: Node24 Test Action
+description: Simple action to run on Node.js 24 for verification
+runs:
+  using: 'node24'
+  main: 'main.js'
