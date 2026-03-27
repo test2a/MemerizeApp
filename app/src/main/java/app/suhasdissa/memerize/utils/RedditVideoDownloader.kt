@@ -228,14 +228,19 @@ class RedditVideoDownloader {
                 return redditUrls
             }
             // Fallback: try to parse DASH manifest directly for video/audio URLs
-            if (url.endsWith(".mpd")) {
-                val baseUrl = url.substringBeforeLast('/') + "/"
-                val videoRegex = Regex("<BaseURL>(DASH_\\d+\\.mp4)</BaseURL>")
-                val audioRegex = Regex("<BaseURL>(DASH_AUDIO_\\d+\\.mp4)</BaseURL>")
-                val video = videoRegex.findAll(text).map { it.groupValues[1] }.lastOrNull()
-                val audio = audioRegex.findAll(text).map { it.groupValues[1] }.lastOrNull()
+            val urlPath = url.substringBefore('?')
+            if (urlPath.endsWith(".mpd")) {
+                // Collect any <BaseURL> entries that look like DASH mp4 segments
+                val baseUrl = urlPath.substringBeforeLast('/') + "/"
+                val baseUrlRegex = Regex("<BaseURL>([^<]+)</BaseURL>")
+                val matches = baseUrlRegex.findAll(text).map { it.groupValues[1] }.toList()
+                val video = matches.lastOrNull { it.contains("DASH") && it.endsWith(".mp4") && !it.contains("AUDIO", ignoreCase = true) }
+                val audio = matches.lastOrNull { it.contains("AUDIO", ignoreCase = true) && it.endsWith(".mp4") }
                 if (video != null) {
-                    return video to audio
+                    // If the BaseURL is relative, prepend baseUrl
+                    val resolvedVideo = if (video.startsWith("http")) video else baseUrl + video
+                    val resolvedAudio = audio?.let { if (it.startsWith("http")) it else baseUrl + it }
+                    return resolvedVideo to resolvedAudio
                 } else {
                     InAppLogger.log("DASH manifest content for debugging:\n" + text.take(2000))
                 }
