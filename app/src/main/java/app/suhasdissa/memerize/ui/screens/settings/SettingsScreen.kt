@@ -62,6 +62,30 @@ fun SettingsScreen(
             Log.d("FIle path", it.toString())
             context.preferences.edit { putString(SaveDirectoryKey, it.toString()) }
         }
+    val exportPicker = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
+        uri ?: return@rememberLauncherForActivityResult
+        try {
+            val json = BackupManager.exportBackup(context)
+            context.contentResolver.openOutputStream(uri)?.use { os ->
+                os.write(json.toByteArray())
+                os.flush()
+            }
+        } catch (e: Exception) {
+            Log.e("Backup", "Export failed", e)
+        }
+    }
+
+    val importPicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        uri ?: return@rememberLauncherForActivityResult
+        try {
+            val content = context.contentResolver.openInputStream(uri)?.bufferedReader().use { it?.readText() }
+            if (!content.isNullOrEmpty()) {
+                BackupManager.importBackup(context, content)
+            }
+        } catch (e: Exception) {
+            Log.e("Backup", "Import failed", e)
+        }
+    }
     var showImageCacheDialog by remember { mutableStateOf(false) }
     Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
         CenterAlignedTopAppBar(navigationIcon = {
@@ -108,12 +132,27 @@ fun SettingsScreen(
             }
             item {
                 SettingItem(
+                    title = "Export communities",
+                    description = "Backup subreddits and Lemmy instances to JSON",
+                    onClick = { exportPicker.launch("memerize_backup.json") },
+                    icon = Icons.Default.Storage
+                )
+            }
+            item {
+                SettingItem(
                     title = stringResource(R.string.about),
                     description = stringResource(R.string.developer_contact),
                     onClick = { onAboutClick() },
                     icon = Icons.Outlined.Info
                 )
             }
+            item {
+                SettingItem(
+                    title = "Import communities",
+                    description = "Restore communities from a JSON backup",
+                    onClick = { importPicker.launch(arrayOf("application/json")) },
+                    icon = Icons.Outlined.Folder
+                )
         }
     }
 
